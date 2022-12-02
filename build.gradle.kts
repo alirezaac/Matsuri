@@ -52,3 +52,9 @@ tasks.named<Wrapper>("wrapper") {
         file("gradle/wrapper/gradle-wrapper.properties").appendText("distributionSha256Sum=$sha256")
     }
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
